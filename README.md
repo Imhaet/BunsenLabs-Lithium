@@ -80,6 +80,12 @@ Worked out of the box! :smile:
 
 <br />
 
+- [x] **Update**
+As always, update and upgrade after installing.
+```
+:# apt update && apt upgrade -y
+```
+
 - [x] **Enable and Start Firewall**
 ```
 :# apt install ufw
@@ -97,12 +103,12 @@ Worked out of the box! :smile:
 
 ### Installing Apps
 
-- [x] ~~**GParted**~~ *Lithium comes with GParted installed*
+- [x] ~~**GParted**~~ _Lithium comes with GParted installed_
 ```
 :# apt install gparted
 ```
 
-- [x] ~~**GIT**~~ *Comes with the Debian 11 KDE install*
+- [x] ~~**GIT**~~ _Comes with the Debian 11 KDE install_
 ```
 :# apt install git
 ```
@@ -113,12 +119,12 @@ Worked out of the box! :smile:
 :$ git config --global color.ui auto
 ```
 
-- [x] ~~**VLC**~~ *Lithium comes with VLC installed*
+- [x] ~~**VLC**~~ _Lithium comes with VLC installed_
 ```
 :# apt install vlc
 ```
 
-- [x] ~~**Firefox**~~ *Lithium comes with Firefox installed*
+- [x] ~~**Firefox**~~ _Lithium comes with Firefox installed_
 ```
 :# apt install firefox
 ```
@@ -130,10 +136,11 @@ Worked out of the box! :smile:
 
 ---
 # NOT COMPLETE!!!
+⚠ THIS PART HASN'T BEEN TESTED ‼
 
 <br />
 
-## FINISHING (OPTIONAL) TOUCHES
+## FINISHING (OPTIONAL) TOUCHES - ⚠ THIS PART HASN'T BEEN TESTED ‼
 
 - [x] **LaTeX**
 * To avoid future problems with extra packages, install the full version of Tex Live. If other package installation problems should appear, this [thread](https://forums.linuxmint.com/viewtopic.php?t=300053) might help.
@@ -141,67 +148,6 @@ Worked out of the box! :smile:
 :# apt install texlive-full -y
 :# apt install latexmk
 ```
-
-<br />
-
-- [x] **Atom** :link: [atom.io](https://atom.io)
-
-To install Atom on Debian now that apt-key is deprecated, and have to manage keyring files in tusted.gpg.d instead, the following intructions are a bit different than the ones on Atom's webpage.
-
-* First create a new directory to store local keys, it is important to separate them from the keys trusted by apt (ie. /etc/apt/trusted.gpg.d). Then download current key in base64 format (ascii-armored).
-```
-:# mkdir /etc/apt/local.trusted.gpg.d
-:# wget -qO /etc/apt/local.trusted.gpg.d/atom-archive-keyring.asc https://packagecloud.io/AtomEditor/atom/gpgkey
-```
-* Export the armored key to a binary gpg file format:
-```
-:$ cat /etc/apt/local.trusted.gpg.d/atom-archive-keyring.asc | sudo gpg --dearmor --output /etc/apt/local.trusted.gpg.d/atom-archive-keyring.gpg
-```
-* Add the credentials to the sources.list; this is similar as the previous instructions, except for the new option signed-by which references the key:
-```
-:# sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/local.trusted.gpg.d/atom-archive-keyring.gpg] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
-```
-* Run `apt update` for the changes to take effect, and then install Atom. Make sure you have the correct path (e.g., `~/Github`) for your *Project Home*.
-```
-:# apt update
-:# apt install atom
-```
-* Some packages to consider installing would be:
-  - [atom-updater-linux by andyrichardson](https://atom.io/packages/atom-updater-linux) - Checks automatically for updates when opening Atom.
-  - [script by atom-community](https://atom.io/packages/script) - Run code in Atom!
-  - [minimap by atom-minimap](https://atom.io/packages/minimap) - Displays a preview of the full source code.
-  - [linter by steelbrain](https://atom.io/packages/linter) - A Base Linter with Cow Powers.
-  - [linter-flake8 by AtomLinter](https://atom.io/packages/linter-flake8) - Atom linter plugin for Python, using flake8.
-    * Needs to install flake8: `pip install flake8`
-  - [python-autopep8 by markbaas](https://atom.io/packages/python-autopep8) - Format python code using autopep8.
-    * Needs to install autopep8 `pip install autopep8`
-  - [autocomplete-python by autocomplete-python](https://atom.io/packages/autocomplete-python) - Python completions for packages, variables, methods, functions, with their arguments. Powered by Kite.
-  - [atom-python-virtualenv by pghilardi](https://atom.io/packages/atom-python-virtualenv) - To run our Python scripts with a virtual environment.
-    * You have to add the sources every time you create a new virtual environment. For example, add `~/Github/NewProject;` to the *Additional virtualenvs*.
-  - [file-icons by file-icons](https://atom.io/packages/file-icons) - Assign file extension icons and colours for improved visual grepping.
-
-<br />
-
-- [x] **LaTeX for Atom** :link: [atom.io](https://atom.io)
-* For the Syntax highlighting and snippets, get [`language-latex` by area](https://atom.io/packages/language-latex).
-* To compile LaTeX files from within Atom, install [`latex` by thomasjo](https://atom.io/packages/latex). Make sure *Enable SyncTeX* is selected and make `build` your *Output Directory* (You can also tick *Build on Save* and will do that every time you save).
-* To show a document tree view for LaTeX, use [`latex-tree` by raphael-cch](https://atom.io/packages/latex-tree). Then go *Packages -> Latex Tree -> Toggle Tree View* to activate.
-* To autocomplete citations, environments and references, the best package I've found is [`latexer` by Focus](https://atom.io/packages/latexer).
-* To display the generated PDF in Atom you need [`pdf-view` by izuzak](https://atom.io/packages/pdf-view), then make sure that *Auto reload on update* is enabled.
-* To spell check your LaTeX file, use the Core Package `spell-check`. Just add `text.tex.latex` into the *Settings -> Grammars*.
-* ~~For LaTeX function autocompletion, [`latex-autocomplete`](https://atom.io/packages/latex-autocomplete).~~
-* ~~Apparently the only LaTeX sensitive wordcount package is Aerijo's [`latex-wordcount`](https://atom.io/packages/latex-wordcount). It's still incomplete, but it does provide a couple of counting techniques.~~
-* ~~For an undistracted writing experience check out the [Typewriter](https://atom.io/themes/pen-paper-coffee-syntax) theme.~~
-
-- [x] **Atom NOT connecting to GitHub**
-I am having an error when trying to clone or fetch data from GitHub, the error reads as '*git clone --recursive https:... ... fatal: protocol error: bad line length 2*'.
-* The workarround that has somehow worked is as follows, and is based on this [thread](https://github.com/atom/atom/discussions/22668):
-  1. On Debian, Atom's git resources are installed in two places, first go to `/usr/share/atom/resources/app.asar.unpacked/node_modules/dugite/git/bin/`.
-  2. Rename the current's folder git, for example `:# mv git git.old`.
-  3. Create a symbolic link to the regular git with `:# ln -s /usr/bin/git git`. If you `ls -l` you will see the new symbolic link as `git -> /usr/bin/git`.
-  4. Do the same for `.../git/libexec/git-core/`.
-  5. Clone your repository using the terminal `:$ git clone <url>` on your project directory.
-  6. In Atom, open the folder with your cloned repository, everything should work now.
 
 <br />
 
@@ -252,7 +198,7 @@ MimeType=text/plain
 <br />
 
 - [x] **Uninstall Apps**
-* Uninstall non needed apps using the `sudo apt-get purge PROGRAM` command.
+* Uninstall non needed apps using the `sudo apt purge PROGRAM` command.
 
 - [x] **Clean Up OS**
 * After uninstalling, make sure there are no dependencies left by running the following commands:
@@ -272,7 +218,12 @@ MimeType=text/plain
 <br />
 <br />
 
-## PERSONAL SYSTEM SETTINGS IN KDE
+## PERSONAL SYSTEM SETTINGS IN KDE - ⚠ THIS PART HASN'T BEEN TESTED ‼
+Also, Bunsen does not use KDE, but OpenBox.
+
+##### Notes
+Shortcut Keys are handled in:
+.config/conky/BL-Lithium-conky.conf
 
 Following are my personal settings for the DE in KDE.
 
