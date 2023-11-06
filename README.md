@@ -225,7 +225,26 @@ Also, Bunsen does not use KDE, but OpenBox.
 Shortcut Keys are handled in:
 .config/conky/BL-Lithium-conky.conf
 
-Following are my personal settings for the DE in KDE.
+Following are my personal settings for the DE in Bunsen's OpenBox.
+
+### Default Applications
+
+- [X] **Terminal**
+Lithium comes with `lxterminal` by default, but can be changed on the Debian Alternatives with:
+```
+sudo update-alternatives --config x-terminal-emulator
+```
+And then select the appropiate option:
+```
+  Selection    Path                 Priority   Status
+------------------------------------------------------------
+  0            /usr/bin/lxterm       30        auto mode
+  1            /usr/bin/koi8rxterm   20        manual mode
+* 2            /usr/bin/lxterm       30        manual mode
+  3            /usr/bin/lxterminal   20        manual mode
+  4            /usr/bin/uxterm       20        manual mode
+  5            /usr/bin/xterm        20        manual mode
+```
 
 <br />
 
