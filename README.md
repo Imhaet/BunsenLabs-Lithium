@@ -246,6 +246,11 @@ And then select the appropiate option:
   5            /usr/bin/xterm        20        manual mode
 ```
 
+- [X] **Bash Aliases**
+`nano .bashrc`, go to the `# some more ls aliases` section and uncomment `alias ll='ls -l'` and `alias la='ls -A'`
+
+
+
 <br />
 
 - [X] **Appearance**
