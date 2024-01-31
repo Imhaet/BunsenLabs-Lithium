@@ -230,7 +230,7 @@ Following are my personal settings for the DE in Bunsen's OpenBox.
 ### Default Applications
 
 - [X] **Terminal**
-Lithium comes with `lxterminal` by default, but can be changed on the Debian Alternatives with:
+Lithium comes with `lxterminal` by default, which I'm happy with, but can be changed on the Debian Alternatives with:
 ```
 sudo update-alternatives --config x-terminal-emulator
 ```
