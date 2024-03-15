@@ -62,6 +62,14 @@ synclient VertEdgeScroll=1 HorizEdgeScroll=1 TapButton1=1 TapButton2=3 VertScrol
 
 <br />
 
+- [x] **Disable touchpad while typing automatically**
+* To disable the touchpad while typing automatically, add this line to `~/.config/openbox/autostart`:
+```
+:$ syndaemon -i .5 -K -t -R -d &
+```
+
+<br />
+
 - [x] **Sound (For MacBook Aluminum - late 2008)** :speaker:
 
 Worked out of the box! :smile:
